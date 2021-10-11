@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /**
+       * Companion Layout implementation
+       */
+      .layout {
+        display: grid;
+        grid-template-columns: repeat(2, 12px) 1fr repeat(2, 12px);
+      }
+
+      .companion {
+        grid-column: 2 / 5;
+      }
+
+      .content {
+        grid-column: 2 / 5;
+      }
+
+      @media (min-width: 998px) {
+        .layout {
+          grid-template-columns: repeat(2, 12px) 221px repeat(2, 12px) 48px 633px 48px;
+        }
+        .companion {
+          grid-column: 2 / 5;
+        }
+        .content {
+          grid-column: 7 / 8;
+        }
+        .companion-widget {
+          position: sticky;
+        }
+      }
+
+      /**
+       * General Styling
+       */
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        display: grid;
+        justify-content: center;
+        font: 1em/1.6em system-ui;
+        color: #373737;
+      }
+
+      .layout {
+        position: relative;
+        padding: 24px 0;
+      }
+
+      .companion {
+        padding-bottom: 24px;
+      }
+
+      .companion-widget {
+        height: 140px;
+        background: #f7f9fc;
+        border-radius: 8px;
+        padding: 12px;
+      }
+
+      h1,
+      h2,
+      p {
+        padding-top: 0;
+        margin-top: 0;
+      }
+
+      @media (min-width: 998px) {
+        .layout {
+          border: 1px solid #ebeff7;
+        }
+        .layout::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          left: 269px;
+          width: 1px;
+          background-color: #ebeff7;
+        }
+        .companion-widget {
+          top: 24px;
+          bottom: 24px;
+        }
+      }
+
+      /**
+       * Annoying Js
+       */
+      #annoying-js {
+        display: grid;
+        grid-gap: 4px;
+        grid-auto-flow: column;
+        justify-content: start;
+        padding: 24px;
+        background: #fef3c7;
+        margin-bottom: 24px;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: height 2s;
+        height: 74px;
+      }
+
+      #annoying-js.expanded {
+        height: 160px;
+      }
+
+      #annoying-js strong {
+        font-size: 1.4em;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="layout">
+      <div class="companion">
+        <div class="companion-widget">Sam Harris</div>
+      </div>
+
+      <div class="content">
+        <h1>Sam Harris</h1>
+        <p>
+          Samuel Benjamin Harris (born April 9, 1967) is an American
+          philosopher, neuroscientist, author, and podcast host. His work
+          touches on a wide range of topics, including rationality, religion,
+          ethics, free will, neuroscience, meditation, psychedelics, philosophy
+          of mind, politics, terrorism, and artificial intelligence. Harris came
+          to prominence for his criticism of religion, and Islam in particular,
+          and is known as one of the "Four Horsemen" of New Atheism, along with
+          Richard Dawkins, Christopher Hitchens, and Daniel Dennett.
+        </p>
+
+        <h2>Early life and education</h2>
+        <p>
+          Samuel Benjamin Harris was born in Los Angeles, California, on April
+          9, 1967. He is the son of actor Berkeley Harris, who appeared mainly
+          in Western films, and TV writer and producer Susan Harris (née
+          Spivak), who created Soap (TV series) and The Golden Girls among other
+          series. His father, born in North Carolina, came from a Quaker
+          background, and his mother is Jewish but not religious. He was raised
+          by his mother following his parents' divorce when he was aged two.
+          Harris has stated that his upbringing was entirely secular and that
+          his parents rarely discussed religion, though he also stated that he
+          was not raised as an atheist.
+        </p>
+
+        <p>
+          While his original major was in English, Harris became interested in
+          philosophical questions while at Stanford University after an
+          experience with the empathogen–entactogen MDMA (colloquially known as
+          ecstasy). The experience led him to be interested in the idea that he
+          might be able to achieve spiritual insights without the use of drugs.
+          Leaving Stanford in his second year, a quarter after his psychedelic
+          experience, he visited India and Nepal, where he studied meditation
+          with teachers of Buddhist and Hindu religions, including Dilgo
+          Khyentse. Eleven years later, in 1997, he returned to Stanford,
+          completing a B.A. degree in philosophy in 2000. Harris began writing
+          his first book, The End of Faith, immediately after the September 11
+          attacks.
+        </p>
+
+        <a id="annoying-js">
+          Some annoying content shifting JS. <strong>CLICK ME!</strong>
+        </a>
+
+        <p>
+          He received a Ph.D. in cognitive neuroscience in 2009 from the
+          University of California, Los Angeles, using functional magnetic
+          resonance imaging to conduct research into the neural basis of belief,
+          disbelief, and uncertainty. His thesis was titled The Moral Landscape:
+          How Science Could Determine Human Values. His advisor was Mark S.
+          Cohen.
+        </p>
+      </div>
+
+      <div class="companion">
+        <div class="companion-widget">Writing</div>
+      </div>
+
+      <div class="content">
+        <h2>Writing</h2>
+        <p>
+          Harris's writing focuses on philosophy, neuroscience, and criticism of
+          religion. He came to prominence for his criticism of religion (Islam
+          in particular) and he is described as one of the Four Horsemen of
+          Atheism, along with Richard Dawkins, Christopher Hitchens, and Daniel
+          Dennett. He has written for publications such as The New York Times,
+          the Los Angeles Times, Economist, London Times, Boston Globe, and The
+          Atlantic. Five of Harris's books have been New York Times bestsellers,
+          and his writing has been translated into over 20 languages. The End of
+          Faith (2004) remained on The New York Times Best Seller list for 33
+          weeks.
+        </p>
+
+        <p>
+          Harris has a chapter giving advice in Tim Ferriss' book Tools of
+          Titans.
+        </p>
+
+        <h2>Debates on religion</h2>
+        <p>
+          In 2007, Harris engaged in a lengthy debate with conservative
+          commentator Andrew Sullivan on the Internet forum Beliefnet. In April
+          2007, Harris debated with evangelical pastor Rick Warren for Newsweek
+          magazine. Harris also debated with Rabbi David Wolpe in 2007. In 2010,
+          Harris joined Michael Shermer to debate with Deepak Chopra and Jean
+          Houston on the future of God in a debate hosted by ABC News Nightline.
+          Harris debated with Christian philosopher William Lane Craig in April
+          2011 on whether there can be an objective morality without God. In
+          June and July 2018, he met with Canadian psychologist Jordan Peterson
+          for a series of debates on religion, particularly the relationship
+          between religious values and scientific fact in defining truth. Harris
+          has also debated with the scholar Reza Aslan.
+        </p>
+      </div>
+
+      <div class="companion">
+        <div class="companion-widget">Podcast</div>
+      </div>
+
+      <div class="content">
+        <h2>Podcast</h2>
+        <p>
+          In September 2013, Harris began releasing the Waking Up podcast (since
+          re-titled Making Sense). Episodes vary in length but often last over
+          two hours. Releases do not follow a regular schedule. The podcast has
+          a large listenership.
+        </p>
+
+        <h2>Meditation app</h2>
+        <p>
+          In September 2018, Harris released a meditation course app, Waking Up
+          with Sam Harris. The app provides daily meditations; long guided
+          meditations; daily "Moments" (brief meditations and reminders);
+          conversations with thought leaders in psychology, meditation,
+          philosophy, psychedelics, and other disciplines; a selection of
+          lessons on various topics, such as Mind & Emotion, Free Will, and
+          Doing Good; and more. Users of the app are introduced to a number of
+          types of meditation, such as mindfulness meditation, vipassanā-style
+          meditation, loving-kindness meditation, and Dzogchen.
+        </p>
+
+        <p>
+          In September 2020, Harris announced his commitment to donate a least
+          10% of Waking Up's profits to highly effective charities, thus
+          becoming the first company to sign the Giving What We Can pledge for
+          companies. The pledge was done retroactively, taking into account the
+          profits since the day the app launched 2 years previously.
+        </p>
+      </div>
+
+      <div class="companion">
+        <div class="companion-widget">Science and morality</div>
+      </div>
+
+      <div class="content">
+        <h2>Science and morality</h2>
+        <p>
+          In The Moral Landscape, Harris argues that science answers moral
+          problems and can aid human well-being.
+        </p>
+      </div>
+
+      <div class="companion">
+        <div class="companion-widget">Free will</div>
+      </div>
+
+      <div class="content">
+        <h2>Free will</h2>
+        <p>See also: Neuroscience of free will</p>
+        <p>
+          Harris says the idea of free will "cannot be mapped on to any
+          conceivable reality" and is incoherent. Harris writes in Free Will
+          that neuroscience "reveals you to be a biochemical puppet."
+        </p>
+
+        <h2>Social and political views</h2>
+        <p>
+          Harris describes himself as a liberal, and states that he supports
+          raising taxes on the wealthy, decriminalizing drugs and legalizing
+          same-sex marriage. In an op-ed for the Los Angeles Times, Harris said
+          that he supported most of the criticism against Bush administration's
+          war in Iraq, and all criticism of fiscal policy and the
+          administration's treatment of science. Harris also said that
+          liberalism has grown "dangerously out of touch with the realities of
+          our world" when it comes to threats allegedly posed by Islamic
+          fundamentalism. He is a registered Democrat.
+        </p>
+
+        <p>
+          During the 2016 United States presidential election, Harris supported
+          Hillary Clinton in the Democratic Party presidential primaries against
+          Bernie Sanders, and despite calling her "a terribly flawed candidate
+          for the presidency," he favored her in the general election and came
+          out strongly in opposition to Donald Trump's candidacy. Harris has
+          criticized Trump for lying, stating in 2018 that Trump "has assaulted
+          truth more than anyone in human history." During the 2020 United
+          States presidential election, Harris supported Andrew Yang in the
+          Democratic primaries. Harris also introduced Yang to podcaster Joe
+          Rogan.
+        </p>
+      </div>
+    </main>
+    <script>
+      const el = document.querySelector("#annoying-js");
+      el.addEventListener("click", () => {
+        el.classList.toggle("expanded");
+      });
+    </script>
+  </body>
+</html>
